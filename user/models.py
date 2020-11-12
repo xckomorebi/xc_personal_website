@@ -7,7 +7,7 @@ class Profile(models.Model):
     
 
     def __str__(self):
-        return f"{self.user.username}\'s Profile"
+        return f"{self.user.username} Profile"
 
     # def save(self):
         # super().save()

@@ -144,4 +144,4 @@ cython_debug/
 .DS_Store
 
 #django private settings
-settings_private
+settings_private.py
