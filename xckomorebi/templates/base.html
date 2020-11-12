@@ -1,6 +1,29 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+<script>    
+(function(win, export_obj) {
+    win['TeaAnalyticsObject'] = export_obj;
+    if (!win[export_obj]) {
+        function _collect() {
+            _collect.q.push(arguments);
+        }
+        _collect.q = _collect.q || [];
+        win[export_obj] = _collect;            
+    }
+    win[export_obj].l = +new Date();
+})(window, 'collectEvent');
+</script>
+<script async src="https://sf1-scmcdn-tos.pstatp.com/goofy/log-sdk/collect/collect-autotrack-rangers.js"></script>
+<script>
+    window.collectEvent('init', { 
+      app_id:202531,
+    channel: 'cn', 
+      autotrack: true  //default off，set to true if you want to get access to heats and circle events
+    });
+    window.collectEvent('start')
+</script> 
+
 <head>
 
     <!-- Required meta tags -->
@@ -54,6 +77,13 @@
         </div>
       </div>
     </main>
+    <footer style="height:auto; background-color:#4bb1a0;">
+      <h3>xckomorebi</h3>
+      <p><a href="https://space.bilibili.com/2493636">bilibili</a></p>
+    </footer>
+    <!-- <footer style="height:auto; background-color:#4bb1a0;">
+      <h3>test content</h3>
+    </footer> -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
